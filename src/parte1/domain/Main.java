@@ -1,7 +1,6 @@
 package domain;
-
 import colecao.IColecao;
-import src.*;
+import src.ListaEncadeada;
 import java.util.Scanner;
 
 public class Main{
@@ -31,26 +30,44 @@ public class Main{
 
             switch (opcao) {
                 case 1: //CADASTRAR
+                try{
                     System.out.print("Digite o nome: ");
                     nome = s.nextLine();
+                    if (nome.isEmpty()){
+                        System.out.println("O nome nao pode ser vazio. Tente novamente.");
+                        break;
+                    }
                     //System.out.println();
 
+
                     System.out.print("Digite o o cpf (apenas os digitos): ");
-                    cpf = s.nextInt();
+                    try{
+                        cpf = s.nextInt();
+                    } catch(Exception e){
+                        System.out.println("Cpf deve conter apenas numeros. Tente novamente.");
+                        s.nextLine();//limpa o buffer
+                        break;
+                    }
                     //System.out.println();
 
                     System.out.print("Digite o salario (xxxx.xx): ");
-                    salario = s.nextFloat();
+                    try{
+                        salario = s.nextFloat();
+                    }catch(Exception e){
+                        System.out.println("Salario deve conter apenas numeros e um ponto decimal. Tente novamente.");
+                        s.nextLine();//limpa o buffer
+                        break;
+                    }
                     s.nextLine();//pra pegar o enter
                     //System.out.println();
-
+    
                     //criando o funcionario e add na lista
                     func = new Funcionario(nome, cpf, salario);
                     funcionarios.adicionar(func);
-                    System.out.println();
                     System.out.println("Funcionario cadastrado com sucesso.");
-                    System.out.println();
-                    System.out.println();                    
+                }catch(Exception e){
+                    System.out.println("Ocorreu um erro. Tente novamente.");
+                }                
                 break;
                 
                 case 2: //PESQUISAR

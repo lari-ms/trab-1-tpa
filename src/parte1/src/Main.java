@@ -6,6 +6,7 @@ public class Main {
     public static void main(String[] args) {
 
         //PEDI PRO GPT FAZER UM TESTE DE ACORDO COM A LISTA QUE CRIAMOS (FIQUEI COM PREGUICA E SONO PRA CRIAR UM TESTE ESPECIFICO PERDAO)
+        
         IColecao<String> lista = new ListaEncadeada<>();
         
         System.out.println("=== TESTE DA LISTA ENCADEADA ===\n");
