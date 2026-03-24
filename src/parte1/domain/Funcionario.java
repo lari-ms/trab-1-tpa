@@ -3,11 +3,11 @@ package domain;
 
 public class Funcionario {
     private String nome;
-    private int cpf;
+    private long cpf;
     private float salario;
 
 
-    public Funcionario(String nome, int cpf, float salario){
+    public Funcionario(String nome, long cpf, float salario){
         this.nome = nome;
         this.cpf = cpf;
         this.salario = salario;
@@ -18,7 +18,7 @@ public class Funcionario {
         return this.nome;
     }
 
-    public int getCpf(){
+    public long getCpf(){
         return this.cpf;
     }
 
@@ -31,7 +31,7 @@ public class Funcionario {
         this.nome = novo_nome;
     }
 
-    public void setCpf(int novo_cpf){
+    public void setCpf(long novo_cpf){
         this.cpf = novo_cpf;
     }
 
@@ -42,7 +42,7 @@ public class Funcionario {
     //tostring
     @Override
     public String toString(){
-        return this.nome + "  -  " + Integer.toString(this.cpf) + "  -  " + Float.toString(this.salario);
+        return this.nome + "  -  " + Long.toString(this.cpf) + "  -  " + Float.toString(this.salario);
     }
 
     @Override
