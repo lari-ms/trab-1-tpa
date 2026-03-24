@@ -1,5 +1,5 @@
 package domain;
-import colecao.IColecao;
+//import colecao.IColecao;
 
 public class Funcionario {
     private String nome;
