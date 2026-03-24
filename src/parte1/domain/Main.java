@@ -72,79 +72,83 @@ public class Main{
                 
                 case 2: //PESQUISAR
                     try{
-                    System.out.print("Digite o cpf (apenas os digitos): ");
-                    try{
+                        if(funcionarios.quantidadeNos() == 0){
+                            System.out.println("Nenhum funcionario cadastrado.");
+                            break;
+                        }
+                        System.out.print("Digite o cpf (apenas os digitos): ");
+                        try{
+                            cpf = s.nextInt();
+                        } catch(Exception e){
+                            System.out.println("Cpf deve conter apenas numeros. Tente novamente.");
+                            s.nextLine();//limpa o buffer
+                            break;
+                        }
                         cpf = s.nextInt();
-                    } catch(Exception e){
-                        System.out.println("Cpf deve conter apenas numeros. Tente novamente.");
-                        s.nextLine();//limpa o buffer
-                        break;
-                    }
-                    cpf = s.nextInt();
-                    s.nextLine();//pra pegar o enter
-                    System.out.println();
+                        s.nextLine();//pra pegar o enter
+                        System.out.println();
 
-                    func = funcionarios.pesquisar(new Funcionario("", cpf, 0));
-                    if (func != null){
-                        System.out.println("Funcionario encontrado.");
-                        System.out.println(func);
-                    } else {
-                        System.out.println("Funcionario nao cadastrado.");
-                    }
-                    System.out.println();
-                    System.out.println();
-                    }catch(Exception e){
-                        System.out.println("Erro ao pesquisar.");
-                        s.nextLine();//limpa o buffer
-                    }
+                        func = funcionarios.pesquisar(new Funcionario("", cpf, 0));
+                        if (func != null){
+                            System.out.println("Funcionario encontrado.");
+                            System.out.println(func);
+                        } else {
+                            System.out.println("Funcionario nao cadastrado.");
+                        }
+                        System.out.println();
+                        System.out.println();
+                        }catch(Exception e){
+                            System.out.println("Erro ao pesquisar.");
+                            s.nextLine();//limpa o buffer
+                        }
                 break;
 
                 case 3: //LISTAR
-                    if (funcionarios.isEmpty()){
+                    if (funcionarios.quantidadeNos() == 0){
                         System.out.println("Nenhum funcionario cadastrado.");
-                        break;
-                    }else
+                    }else{
                     System.out.println("Funcionarios cadastrados:");
-                    System.out.println(funcionarios);
-                    System.out.println();
-                    System.out.println();
+                        System.out.println(funcionarios);
+                        System.out.println();
+                        System.out.println();
                     }
                 break;
 
                 case 4: //EXCLUIR
-                try{
-                    System.out.println("Digite o cpf do funcionario a ser excluido: ");
-                    if (funcionarios.isEmpty()){
-                        System.out.println("Nenhum funcionario cadastrado.");
-                        break;
-                    }
-                    System.out.println(funcionarios);
-                    System.out.print(">>> ");
-                    cpf = s.nextInt();
-                    s.nextLine();//pra pegar o enter
-                    System.out.println();
+                    try{
+                        System.out.println("Digite o cpf do funcionario a ser excluido: ");
+                        if (funcionarios.quantidadeNos() == 0){
+                            System.out.println("Nenhum funcionario cadastrado.");
+                                break;
+                        }
+                        System.out.println(funcionarios);
+                        System.out.print(">>> ");
+                        cpf = s.nextInt();
+                        s.nextLine();//pra pegar o enter
+                        System.out.println();
 
-                    func = funcionarios.pesquisar(new Funcionario("", cpf, 0));
-                    if (func == null){
-                        System.out.println("Funcionario nao cadastrado.");
-                        break;
-                    }
-
-                    //remover da lista
-                    if (funcionarios.remover(func)){
-                        System.out.println(String.format("O funcionario %s foi exluido com sucesso.", func.getNome()));
-                    } else {
-                        System.out.println("nao foi possivel excluir o funcionario.");
-                    }
-                    System.out.println();
-                    System.out.println();
-                }catch(Exception e){
-                    System.out.println("Erro ao excluir funcionario. Tente novamente.");
+                        func = funcionarios.pesquisar(new Funcionario("", cpf, 0));
+                        if (func == null){
+                            System.out.println("Funcionario nao cadastrado.");
+                            break;
+                        }
+                        //remover da lista
+                        if (funcionarios.remover(func)){
+                            System.out.println(String.format("O funcionario %s foi exluido com sucesso.", func.getNome()));
+                        } else {
+                            System.out.println("nao foi possivel excluir o funcionario.");
+                        }
+                        System.out.println();
+                        System.out.println();
+                    }catch(Exception e){
+                        System.out.println("Erro ao excluir funcionario. Tente novamente.");    
+                    } 
                 break;
+                    
 
-
-                default:
-                    break;
+            default:
+                break;
+                
             }
         } while (opcao != 5);
 
