@@ -14,7 +14,8 @@ public class ListaEncadeadaArrayList<T> implements IColecao<T>{
 
     @Override
     public T pesquisar(T valor) {
-         return lista.contains(valor) ? valor : null;
+        int index = lista.indexOf(valor);
+        return index >= 0 ? lista.get(index) : null;
     }
 
     @Override

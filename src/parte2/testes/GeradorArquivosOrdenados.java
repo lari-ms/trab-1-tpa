@@ -2,7 +2,6 @@ package testes;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.util.Random;
 
 
@@ -44,7 +43,7 @@ public class GeradorArquivosOrdenados{
     private static void gerarArquivo() {
         Random random = new Random();
         
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(NOME_ARQUIVO, StandardCharsets.UTF_8))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(NOME_ARQUIVO))) {
             writer.write(NUM_REGISTROS + "\n");
             
             for (int i = 1; i <= NUM_REGISTROS; i++) {
