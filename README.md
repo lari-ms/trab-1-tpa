@@ -1,4 +1,4 @@
-**# Trabalho de TPA – Implementação e Análise de Listas em Java
+Trabalho de TPA – Implementação e Análise de Listas em Java
 
 Este repositório contém a implementação prática e a análise de complexidade referentes ao trabalho sobre Estruturas de Listas, desenvolvido para a disciplina de Técnicas de Programação Avançada (TPA).
 
@@ -134,4 +134,4 @@ O relatório completo com todas as análises matemáticas e empíricas está dis
 
 - Larissa
 - Luma
-- Sofia**
+- Sofia
