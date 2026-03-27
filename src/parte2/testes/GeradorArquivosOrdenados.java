@@ -6,8 +6,8 @@ import java.util.Random;
 
 
 public class GeradorArquivosOrdenados{
-    private static final int NUM_REGISTROS = 100000; // Quantidade de registros a serem gerados
-    private static final String NOME_ARQUIVO = "funcionarios100k.txt";
+    private static final int NUM_REGISTROS = 1000000; // Quantidade de registros a serem gerados
+    private static final String NOME_ARQUIVO = "testes/funcionarios1Mi.txt";
     
     private static final String[] PRENOMES = {
         "Ana", "Bruno", "Carlos", "Daniela", "Eduardo", "Fernanda", "Gabriel", "Helena", "Isabela", "João",

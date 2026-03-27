@@ -6,7 +6,7 @@ import colecao.IColecao;
 import src.ListaEncadeada;
 
 public class LeitorArquivos {
-    private static final String NOME_ARQUIVO = "testes/funcionarios400k.txt";
+    private static final String NOME_ARQUIVO = "testes/funcionarios100k.txt";
     
     public static void main(String[] args) {
     
